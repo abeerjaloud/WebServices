@@ -1,6 +1,8 @@
 package com.patient.dto;
 import org.springframework.stereotype.Component;
 
+import com.patient.entity.Patient;
+
 @Component
 public class GetPatientResponse {
 

@@ -1,14 +1,19 @@
 package com.patient.webservice;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.patient.dto.Patient;
-
+import java.util.List;
+import com.patient.business.PatientBusiness;
+import com.patient.entity.Patient;
+  
 @RestController
 @RequestMapping("/patient")
 public class PatientService {
+	@Autowired
+    PatientBusiness patientService;
+	
 	
 	@RequestMapping("/hello")
 	public String hello() {
@@ -19,12 +24,11 @@ public class PatientService {
 	public Patient getPatientById(@PathVariable("id") int patientId) {
 		System.out.println("Patient Id =====>   " + patientId);
 		
-		Patient patient = new Patient();
-		
-		//patient.setFirstName("Raed");
-	//	patient.setAge(27);
-		patient.getFirstName();
-		
-		return patient;
+		return patientService.getPatient(patientId);
 	}
+	@RequestMapping("/listPatients")
+    public List<Patient> getPatients() {
+        List<Patient> list = patientService.getAllPatients();
+        return list;
+    }
 }

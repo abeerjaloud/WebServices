@@ -1,4 +1,4 @@
-package com.patient.dto;
+package com.patient.entity;
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -17,7 +17,7 @@ public class Patient{
 	@Id
 	@Column(name="patientId", updatable=false, nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int patientId; 
+	private Integer patientId; 
 
 	@Column(name="firstName" ,nullable=false )
 	private String firstName;
@@ -31,7 +31,6 @@ public class Patient{
 	@Column(name="age" ,nullable=false )
 	private int age;
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd") 
 	@Column(name="DOB" ,nullable=false )
 	private Date dateOfBirth;
 	
@@ -45,11 +44,11 @@ public class Patient{
 	private String bloodPressure;
 	
 
-	public int getPatientId() {
+	public Integer getPatientId() {
 		return patientId;
 	}
 
-	public void setPatientId(int patientId) {
+	public void setPatientId(Integer patientId) {
 		this.patientId = patientId;
 	}
 
@@ -116,6 +115,13 @@ public class Patient{
 
 	public void setBloodPressure(String bloodPressure) {
 		this.bloodPressure = bloodPressure;
+	}
+
+	@Override
+	public String toString() {
+		return "Patient [patientId=" + patientId + ", firstName=" + firstName + ", secondName=" + secondName
+				+ ", lastName=" + lastName + ", age=" + age + ", dateOfBirth=" + dateOfBirth + ", heartRate="
+				+ heartRate + ", temperature=" + temperature + ", bloodPressure=" + bloodPressure + "]";
 	}
 
 	
