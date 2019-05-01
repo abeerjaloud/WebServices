@@ -21,8 +21,9 @@ public class PatientService {
 		
 		Patient patient = new Patient();
 		
-		patient.setName("Raed");
-		patient.setAge(27);
+		//patient.setFirstName("Raed");
+	//	patient.setAge(27);
+		patient.getFirstName();
 		
 		return patient;
 	}
