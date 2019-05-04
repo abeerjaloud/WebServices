@@ -2,10 +2,10 @@ package com.patient.dto;
 
 public class BaseResponse {
 
-	private String resultCode; 
-	
+	private String resultCode;
+
 	private String message;
-	
+
 	private int code;
 
 	public String getResultCode() {
@@ -31,6 +31,5 @@ public class BaseResponse {
 	public void setCode(int code) {
 		this.code = code;
 	}
-	
-	
+
 }

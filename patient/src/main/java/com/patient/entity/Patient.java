@@ -11,38 +11,37 @@ import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="patient")
-public class Patient{
-	
-	@Id
-	@Column(name="patientId", updatable=false, nullable=false)
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer patientId; 
+@Table(name = "patient")
+public class Patient {
 
-	@Column(name="firstName" ,nullable=false )
+	@Id
+	@Column(name = "Patientid", updatable = false, nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer patientId;
+
+	@Column(name = "first_name", nullable = false)
 	private String firstName;
-	
-	@Column(name="secondName" ,nullable=false )
+
+	@Column(name = "second_name", nullable = false)
 	private String secondName;
-	
-	@Column(name="lastName" ,nullable=false )
+
+	@Column(name = "last_name", nullable = false)
 	private String lastName;
-	
-	@Column(name="age" ,nullable=false )
+
+	@Column(name = "age", nullable = false)
 	private int age;
-	
-	@Column(name="DOB" ,nullable=false )
+
+	@Column(name = "dob", nullable = false)
 	private Date dateOfBirth;
-	
-	@Column(name="heartRate" ,nullable=false )
+
+	@Column(name = "heart_rate", nullable = false)
 	private int heartRate;
-	
-	@Column(name="temperature" ,nullable=false )
+
+	@Column(name = "temperature", nullable = false)
 	private int temperature;
-	
-	@Column(name="bloodPressure" ,nullable=false )
+
+	@Column(name = "blood_pressure", nullable = false)
 	private String bloodPressure;
-	
 
 	public Integer getPatientId() {
 		return patientId;
@@ -83,7 +82,6 @@ public class Patient{
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
 
 	public Date getDateOfBirth() {
 		return dateOfBirth;
@@ -124,5 +122,4 @@ public class Patient{
 				+ heartRate + ", temperature=" + temperature + ", bloodPressure=" + bloodPressure + "]";
 	}
 
-	
 }
