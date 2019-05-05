@@ -110,4 +110,19 @@ public class PatientService {
 
 		return patientBusiness.getAllPatients();
 	}
+	@RequestMapping(value="/updatePatient", method=RequestMethod.PUT)
+    public GetPatientResponse updatePatient(@RequestBody Patient patient) {
+		return patientBusiness.updatePatient(patient); 
+	}
+	
+	@RequestMapping("/hDeletePatient/{id}")
+	public BaseResponse hardDeletePatient(@PathVariable("id") int patientId) {
+		return patientBusiness.hardDeletePatient(patientId);
+	}
+	
+	@RequestMapping("/sDeletePatient/{id}")
+	public BaseResponse softDeletePatient(@PathVariable("id") int patientId) {
+		return patientBusiness.softDeletePatient(patientId);
+	}
 }
+
