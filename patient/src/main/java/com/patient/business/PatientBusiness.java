@@ -11,4 +11,10 @@ public interface PatientBusiness {
 	public GetPatientResponse getAllPatients();
 	
 	public BaseResponse addPatient(Patient patient);
+	
+	public GetPatientResponse updatePatient(Patient patient);
+	
+	public BaseResponse hardDeletePatient(int patientId);
+	
+	public BaseResponse softDeletePatient(int patientId);
 }
