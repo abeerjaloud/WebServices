@@ -9,4 +9,6 @@ public interface PatientBusiness {
 	public GetPatientResponse getPatient(int id);
 
 	public GetPatientResponse getAllPatients();
+	
+	public BaseResponse addPatient(Patient patient);
 }

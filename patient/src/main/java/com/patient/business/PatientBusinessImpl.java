@@ -20,6 +20,15 @@ public class PatientBusinessImpl implements PatientBusiness {
 	@Autowired
 	private PatientDao patientDao;
 
+	public BaseResponse addPatient(Patient patient) {
+
+		BaseResponse response = new BaseResponse();
+
+		patientDao.save(patient);
+
+		return response;
+	}
+
 	public GetPatientResponse getPatient(int id) {
 		GetPatientResponse response = new GetPatientResponse();
 		BaseResponse baseResponse = new BaseResponse();

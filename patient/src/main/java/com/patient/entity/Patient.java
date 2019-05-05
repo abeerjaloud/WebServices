@@ -31,6 +31,7 @@ public class Patient {
 	@Column(name = "age", nullable = false)
 	private int age;
 
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "dob", nullable = false)
 	private Date dateOfBirth;
 
@@ -42,6 +43,9 @@ public class Patient {
 
 	@Column(name = "blood_pressure", nullable = false)
 	private String bloodPressure;
+	
+	/*@Column(name = "deleted")
+	private int deleted;*/
 
 	public Integer getPatientId() {
 		return patientId;
@@ -114,6 +118,15 @@ public class Patient {
 	public void setBloodPressure(String bloodPressure) {
 		this.bloodPressure = bloodPressure;
 	}
+	
+
+	/*public int getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(int deleted) {
+		this.deleted = deleted;
+	}*/
 
 	@Override
 	public String toString() {
@@ -121,5 +134,7 @@ public class Patient {
 				+ ", lastName=" + lastName + ", age=" + age + ", dateOfBirth=" + dateOfBirth + ", heartRate="
 				+ heartRate + ", temperature=" + temperature + ", bloodPressure=" + bloodPressure + "]";
 	}
+
+	
 
 }
