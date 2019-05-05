@@ -44,8 +44,8 @@ public class Patient {
 	@Column(name = "blood_pressure", nullable = false)
 	private String bloodPressure;
 	
-	/*@Column(name = "deleted")
-	private int deleted;*/
+	@Column(name = "deleted")
+	private int deleted;
 
 	public Integer getPatientId() {
 		return patientId;
@@ -120,13 +120,13 @@ public class Patient {
 	}
 	
 
-	/*public int getDeleted() {
+	public int getDeleted() {
 		return deleted;
 	}
 
 	public void setDeleted(int deleted) {
 		this.deleted = deleted;
-	}*/
+	}
 
 	@Override
 	public String toString() {
@@ -138,3 +138,4 @@ public class Patient {
 	
 
 }
+
